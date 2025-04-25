@@ -59,7 +59,7 @@ void loop() {
 
       // Reset dan enable interrupt kembali
       mfrc522.PCD_WriteRegister(mfrc522.ComIrqReg, 0x7F); // Clear all IRQ
-      delay(200);
+      delay(50);
       attachInterrupt(digitalPinToInterrupt(IRQ_PIN), detectRFID, FALLING);
 
     }
@@ -67,7 +67,7 @@ void loop() {
     mfrc522.PCD_WriteRegister(mfrc522.FIFODataReg, mfrc522.PICC_CMD_REQA);
     mfrc522.PCD_WriteRegister(mfrc522.CommandReg, mfrc522.PCD_Transceive);
     mfrc522.PCD_WriteRegister(mfrc522.BitFramingReg, 0x87);
-    delay(100);
+    delay(50);
   }
 
 
